@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="refresh" content="10; url =1page.html" />
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+:root {
+  --bck: #293443;
+  --font: #FCBE40;
+  --box: #655735;
+  
+}
+*{
+  font-family: 'Zen Dots', sans-serif;
+}
+html {
+  background: var(--bck);
+}
+.wrapper {
+  display: flex;
+  width: 500px;
+  margin: auto;
+  margin-top: 40px;
+  background: var(--box);
+  transform: skew(0deg, 0deg);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+   animation: mymove 5s infinite;
+}
+#countdown {
+  color: var(--font);
+  text-align: center;
+  font-size: 7rem;
+  padding: 30px;
+}
+
+button {
+  display: none;
+}
+
+
+@keyframes mymove {
+  1% {transform: skewX(10deg);
+    transform: skewY(0deg);}
+  20% {transform: skewX(-10deg);
+    transform: skewY(20deg);}
+  40% {transform: skewX(10deg);
+    transform: skewY(0deg);}
+  60% {transform: skewX(21deg);
+    transform: skewY(-12deg);}
+  80% {transform: skewX(-13deg);
+    transform: skewY(-10deg);}
+  99% {transform: skewX(0deg);
+    transform: skewY(-0deg);}
+}
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <div class="wrapper">
+        <div id="countdown">
+          10:00
+        </div>
+          <button>CHANGE</button>
+        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <center><img src="ruko.png" alt=""></center>
+    <script>
+        const startingMinutes = 10;
+let time = startingMinutes * 60;
+
+const countdownEl = document.querySelector("#countdown");
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  
+  seconds = seconds < 10 ? "0" + seconds : seconds
+  
+  countdownEl.innerHTML = `${minutes}:${seconds}`;
+  time--;
+}
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
